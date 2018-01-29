@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Text;
 
 
-namespace SimpleWebApp.Logic.Replacement
+namespace SimpleWebApp.Logic.Replacing
 {
     class Replacer : IReplacer
     {

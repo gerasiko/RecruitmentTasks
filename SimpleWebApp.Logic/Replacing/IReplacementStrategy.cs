@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SimpleWebApp.Logic.Replacement
+namespace SimpleWebApp.Logic.Replacing
 {
     interface IReplacementStrategy
     {

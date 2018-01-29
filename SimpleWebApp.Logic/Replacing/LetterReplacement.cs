@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace SimpleWebApp.Logic.Replacement
+namespace SimpleWebApp.Logic.Replacing
 {
     class LetterReplacement : IReplacementStrategy
     {

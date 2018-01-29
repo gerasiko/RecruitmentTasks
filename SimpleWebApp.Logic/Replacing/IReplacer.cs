@@ -1,4 +1,4 @@
-﻿namespace SimpleWebApp.Logic.Replacement
+﻿namespace SimpleWebApp.Logic.Replacing
 {
     interface IReplacer
     {

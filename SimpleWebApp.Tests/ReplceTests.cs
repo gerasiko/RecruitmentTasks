@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SimpleWebApp.Logic.Replacement;
+using SimpleWebApp.Logic.Replacing;
 using System;
 
 namespace SimpleWebApp.Tests
