@@ -2,36 +2,41 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SimpleWebApp.Logic;
 using SimpleWebApp.Models;
 
 namespace SimpleWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        IOptionGenerator _generator;
+
+        public HomeController(IOptionGenerator generator)
         {
-            return View();
+            _generator = generator;
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
 
-            return View();
+        [HttpGet]
+        public ActionResult Index()
+        {
+            DropDownListModel model = new DropDownListModel();
+            return View(model);
         }
 
-        public IActionResult Contact()
+        [HttpPost]
+        public ActionResult Index(DropDownListModel model)
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            if (model.Options == null)
+                model.Options = new List<string>();
+            if (ModelState.IsValid)
+                model.Options.Add(_generator.GenerateOption(model.NewOption));
+               
+            return View(model);
         }
 
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }
