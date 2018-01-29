@@ -23,15 +23,15 @@ namespace SimpleWebApp.Logic.Replacing
             while (i < option.Length)
             {
                 if (Char.IsDigit(splitedOption[i]))
-                    newOption.Append(replacementOptions.Replace(OptionPartTypes.NUMBER, GetAllNumber(ref i, splitedOption)));
+                    newOption.Append(replacementOptions.Replace(OptionPartTypes.NUMBER, GetWholeNumber(ref i, splitedOption)));
                 else
-                    newOption.Append(replacementOptions.Replace(OptionPartTypes.WORD, GetAllWord(ref i, splitedOption)));
+                    newOption.Append(replacementOptions.Replace(OptionPartTypes.WORD, GetWholeWord(ref i, splitedOption)));
             }
 
             return newOption.ToString();
         }
 
-        private string GetAllNumber(ref int index, char[] splitedOption)
+        private string GetWholeNumber(ref int index, char[] splitedOption)
         {
             StringBuilder numberOption = new StringBuilder();
             do
@@ -45,7 +45,7 @@ namespace SimpleWebApp.Logic.Replacing
             return numberOption.ToString();
         }
 
-        private string GetAllWord(ref int index, char[] splitedOption)
+        private string GetWholeWord(ref int index, char[] splitedOption)
         {
             StringBuilder wordOption = new StringBuilder();
             do
